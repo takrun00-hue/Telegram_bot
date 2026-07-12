@@ -1,0 +1,23 @@
+name: Telegram Ad Bot
+on:
+  schedule:
+    - cron: '0 8 * * *'
+    - cron: '0 11 * * *'
+    - cron: '0 14 * * *'
+    - cron: '0 18 * * *'
+    - cron: '0 20 * * *'
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install telethon -q
+      - run: echo "$TG_SESSION" > session.txt && python bot.py
+        env:
+          TG_SESSION: ${{ secrets.TG_SESSION }}
