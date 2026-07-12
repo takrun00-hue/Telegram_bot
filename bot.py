@@ -16,7 +16,7 @@ API_HASH   = "798440d9cbbbf2bcb09ff047cb778d1d"
 TG_SESSION = open("session.txt").read().strip()
 ADMIN_ID   = 7993801735
 DELAY      = 60
-POST_HOUR  = 19
+POST_HOURS = [8, 11, 14, 18, 22]
 
 logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s", level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -78,14 +78,14 @@ async def main():
         return
     me = await client.get_me()
     log.info(f"🤖 لاگین: {me.first_name}")
-    ran_today = False
+    posted_hours = set()
+    POST_HOURS = [8, 11, 14, 17, 20]
     while True:
         now = datetime.now()
-        if now.hour == POST_HOUR and now.minute == 0 and not ran_today:
+        if now.hour in POST_HOURS and now.minute == 0 and now.hour not in posted_hours:
             await daily_job(client)
-            ran_today = True
+            posted_hours.add(now.hour)
         if now.hour == 0 and now.minute == 0:
-            ran_today = False
+            posted_hours.clear()
         await asyncio.sleep(30)
-
 asyncio.run(main())
