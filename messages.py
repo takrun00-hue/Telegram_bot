@@ -1,31 +1,31 @@
 AFGHANCOIN_MSG = """
-🎮 **فروش ارز بازی‌های موبایل** 🎮
+🎮 **Buy Game Currency - Best Price** 🎮
 
-💎 یوسی پابجی موبایل
-💎 دایموند فری فایر
-💎 دایموند موبایل لجندز
-💎 کوین تیک‌تاک
+💎 PUBG Mobile UC
+💎 Free Fire Diamonds
+💎 Mobile Legends Diamonds
+💎 TikTok Coins
 
-✅ تحویل فوری و آنی
-✅ کمترین قیمت بازار
-✅ پشتیبانی ۲۴ ساعته
+✅ Instant Delivery
+✅ Lowest Price
+✅ 24/7 Support
 
 🌐 https://afghancoins.online
-📩 پشتیبانی: @AFGTeam_support
+📩 Support: @AFGTeam_support
 """
 
 AFGHANFOLLOWERS_MSG = """
-📈 **خدمات رشد شبکه‌های اجتماعی** 📈
+📈 **Social Media Growth Services** 📈
 
-✅ فالوور اینستاگرام
-✅ ممبر تلگرام
-✅ لایک و ویو یوتیوب
-✅ فالوور تیک‌تاک
+✅ Instagram Followers
+✅ Telegram Members
+✅ YouTube Views & Likes
+✅ TikTok Followers
 
-💰 ارزان‌ترین قیمت
-⚡ تحویل فوری
-🔐 کیفیت تضمینی
+💰 Cheapest Price
+⚡ Fast Delivery
+🔐 Quality Guaranteed
 
 🌐 https://afghanfollowers.online
-📩 پشتیبانی: @AFGTeam_support
+📩 Support: @AFGTeam_support
 """
