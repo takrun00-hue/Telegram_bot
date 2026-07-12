@@ -16,7 +16,7 @@ API_HASH   = "798440d9cbbbf2bcb09ff047cb778d1d"
 TG_SESSION = open("session.txt").read().strip()
 ADMIN_ID   = 7993801735
 DELAY      = 60
-POST_HOUR  = 10
+POST_HOUR  = 19
 
 logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s", level=logging.INFO)
 log = logging.getLogger(__name__)
