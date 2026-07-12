@@ -68,8 +68,7 @@ async def daily_job(client):
     ok1, fail1 = await run_campaign(client, AFGHANFOLLOWERS_MSG, "AfghanFollowers")
 await asyncio.sleep(120)
 ok2, fail2 = await run_campaign(client, AFGHANCOIN_MSG, "AfghanCoins")
-    await notify(client, f"📊 گزارش\n🪙 AfghanCoins: ✅{ok1} ❌{fail1}\n📈 AfghanFollowers: ✅{ok2} ❌{fail2}")
-
+    await notify(client, f"📊 گزارش\n🪙 AfghanCoins: ✅{ok2} ❌{fail2}\n📈 AfghanFollowers: ✅{ok1} ❌{fail1}")
 async def main():
     client = TelegramClient(StringSession(TG_SESSION), API_ID, API_HASH)
     await client.connect()
