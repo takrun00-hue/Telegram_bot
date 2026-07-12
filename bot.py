@@ -12,12 +12,12 @@ from telethon.errors import (
 )
 from messages import AFGHANCOIN_MSG, AFGHANFOLLOWERS_MSG
 
-API_ID     = int(os.environ["TG_API_ID"])
-API_HASH   = os.environ["TG_API_HASH"]
-TG_SESSION = os.environ["TG_SESSION"]
-ADMIN_ID   = int(os.environ.get("ADMIN_CHAT_ID", "7993801735"))
-DELAY      = int(os.environ.get("DELAY_SECONDS", "60"))
-POST_HOUR  = int(os.environ.get("POST_HOUR", "10"))
+API_ID     = 33368640
+API_HASH   = "798440d9cbbbf2bcb09ff047cb778d1d"
+TG_SESSION = open("session.txt").read().strip()
+ADMIN_ID   = 7993801735
+DELAY      = 60
+POST_HOUR  = 10
 
 logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s", level=logging.INFO)
 log = logging.getLogger(__name__)
