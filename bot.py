@@ -11,11 +11,11 @@ from telethon.errors import (
 )
 from messages import AFGHANCOIN_MSG, AFGHANFOLLOWERS_MSG
 
-API_ID     = 33368640
-API_HASH   = "798440d9cbbbf2bcb09ff047cb778d1d"
+API_ID = 33368640
+API_HASH = "798440d9cbbbf2bcb09ff047cb778d1d"
 TG_SESSION = open("session.txt").read().strip()
-ADMIN_ID   = 7993801735
-DELAY      = 60
+ADMIN_ID = 7993801735
+DELAY = 60
 POST_HOURS = [8, 11, 14, 18, 22]
 
 logging.basicConfig(format="%(asctime)s | %(levelname)s | %(message)s", level=logging.INFO)
@@ -51,24 +51,27 @@ async def run_campaign(client, message, label):
     ok = fail = 0
     for i, group in enumerate(groups, 1):
         result = await send_ad(client, group, message)
-        if result: ok += 1
-        else: fail += 1
+        if result:
+            ok += 1
+        else:
+            fail += 1
         await asyncio.sleep(DELAY + random.randint(5, 25))
     return ok, fail
 
 async def notify(client, text):
     try:
         await client.send_message(ADMIN_ID, text, parse_mode="md")
-    except:
+    except Exception:
         pass
 
 async def daily_job(client):
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     await notify(client, f"🤖 ربات شروع شد\n⏰ {now}")
     ok1, fail1 = await run_campaign(client, AFGHANFOLLOWERS_MSG, "AfghanFollowers")
-await asyncio.sleep(120)
-ok2, fail2 = await run_campaign(client, AFGHANCOIN_MSG, "AfghanCoins")
-    await notify(client, f"📊 گزارش\n🪙 AfghanCoins: ✅{ok2} ❌{fail2}\n📈 AfghanFollowers: ✅{ok1} ❌{fail1}")
+    await asyncio.sleep(120)
+    ok2, fail2 = await run_campaign(client, AFGHANCOIN_MSG, "AfghanCoins")
+    await notify(client, f"📊 گزارش\n📈 AfghanFollowers: ✅{ok1} ❌{fail1}\n🪙 AfghanCoins: ✅{ok2} ❌{fail2}")
+
 async def main():
     client = TelegramClient(StringSession(TG_SESSION), API_ID, API_HASH)
     await client.connect()
@@ -78,7 +81,6 @@ async def main():
     me = await client.get_me()
     log.info(f"🤖 لاگین: {me.first_name}")
     posted_hours = set()
-    POST_HOURS = [8, 11, 14, 17, 20]
     while True:
         now = datetime.now()
         if now.hour in POST_HOURS and now.minute == 0 and now.hour not in posted_hours:
@@ -87,4 +89,5 @@ async def main():
         if now.hour == 0 and now.minute == 0:
             posted_hours.clear()
         await asyncio.sleep(30)
+
 asyncio.run(main())
