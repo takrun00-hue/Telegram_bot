@@ -14,7 +14,7 @@ from messages import AFGHANCOIN_MSG, AFGHANFOLLOWERS_MSG
 
 API_ID     = int(os.environ["TG_API_ID"])
 API_HASH   = os.environ["TG_API_HASH"]
-TG_SESSION = os.environ["TG_SESSION"]
+TG_SESSION = os.environ.get("TG_SESSION", "1ApWapzMBu1YMLro0VFyRAXVyrcgJ60rLDVPuWRzd4MIh69alBIoL-j3qiy8YR_R_ufyt9MwiDQC1TY5_NCOFPD2ViBADD5rtEz_AUhHuS-RV8lXTVWXzeBc7vMibdlNEma2ogRAyGYd0Pl9ssXSkegOcB9HPXd3UK22aW8lAOhsHXToP5pZpHmLUnr7uJo5CwuNheYwWsgsf-u2Z6ZKYs5nKzg63k35aIyB-SQ_B1q3n1XxHWxuUTd2TDA12Cs4OH-ebsTj452sj9Y9ZxhClBI3r3j1OAemNfd28S3KsPnAQEH3SFEFG9DC0lb4UtxqxL3zIRhKdlae2PGWOFIslGUp8jFC6whA=")
 ADMIN_ID   = int(os.environ.get("ADMIN_CHAT_ID", "7993801735"))
 DELAY      = int(os.environ.get("DELAY_SECONDS", "60"))
 POST_HOUR  = int(os.environ.get("POST_HOUR", "10"))
