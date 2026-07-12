@@ -80,14 +80,7 @@ async def main():
         return
     me = await client.get_me()
     log.info(f"🤖 لاگین: {me.first_name}")
-    posted_hours = set()
-    while True:
-        now = datetime.now()
-        if now.hour in POST_HOURS and now.minute == 0 and now.hour not in posted_hours:
-            await daily_job(client)
-            posted_hours.add(now.hour)
-        if now.hour == 0 and now.minute == 0:
-            posted_hours.clear()
-        await asyncio.sleep(30)
+    await daily_job(client)
+    await client.disconnect()
 
 asyncio.run(main())
