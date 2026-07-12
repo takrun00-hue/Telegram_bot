@@ -65,9 +65,9 @@ async def notify(client, text):
 async def daily_job(client):
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     await notify(client, f"🤖 ربات شروع شد\n⏰ {now}")
-    ok1, fail1 = await run_campaign(client, AFGHANCOIN_MSG, "AfghanCoins")
-    await asyncio.sleep(120)
-    ok2, fail2 = await run_campaign(client, AFGHANFOLLOWERS_MSG, "AfghanFollowers")
+    ok1, fail1 = await run_campaign(client, AFGHANFOLLOWERS_MSG, "AfghanFollowers")
+await asyncio.sleep(120)
+ok2, fail2 = await run_campaign(client, AFGHANCOIN_MSG, "AfghanCoins")
     await notify(client, f"📊 گزارش\n🪙 AfghanCoins: ✅{ok1} ❌{fail1}\n📈 AfghanFollowers: ✅{ok2} ❌{fail2}")
 
 async def main():
